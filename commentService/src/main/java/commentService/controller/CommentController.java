@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/comments")
 public class CommentController {
@@ -18,6 +20,7 @@ public class CommentController {
     public ResponseEntity save(@RequestBody Comment requestEntity) throws UnsupportedOperationException
     {
         try {
+            requestEntity.createdDate = new Date();
             Comment comment = commentRepository.save(requestEntity);
             return ResponseEntity.ok().body(comment.id);
         } catch (Exception e) {

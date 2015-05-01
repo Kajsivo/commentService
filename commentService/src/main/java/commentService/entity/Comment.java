@@ -11,8 +11,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    @Column(nullable = false)
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(insertable = true, updatable = false)
     public Date createdDate;
 
     @Column(nullable = false)

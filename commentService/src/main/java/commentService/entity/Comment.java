@@ -11,13 +11,13 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    @Column(insertable = true, updatable = false)
+    @Column(nullable = false, insertable = true, updatable = false)
     public Date createdDate;
 
     @Column(nullable = false)
     public long itemId;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = true, updatable = false)
     public String author;
 
     @Column(nullable = false)

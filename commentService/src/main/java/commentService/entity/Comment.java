@@ -8,14 +8,14 @@ import java.util.Date;
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    @Column(nullable = false, insertable = true, updatable = false)
+    public String id;
 
     @Column(nullable = false, insertable = true, updatable = false)
     public Date createdDate;
 
     @Column(nullable = false)
-    public long itemId;
+    public String itemId;
 
     @Column(nullable = false, insertable = true, updatable = false)
     public String author;
